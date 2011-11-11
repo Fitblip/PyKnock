@@ -1,0 +1,11 @@
+Hello!
+
+This is a project that i've worked on for a long time now, and is just now polished enough to see the light of day! It's a python-based knocking daemon that opens ports based off of the ICMP request length that comes in. It also has a lot of other bells & whistles (such as google voice integration to send you texts, and allow you to dump your current IPTables configuration to your email).
+
+I originally implemented this in bash with iptables rules to look for ICMP requests. It worked....sorta, then I got a lot better at python, and decided it was time to take this idea and implement it properly in a fashion that I could share with the world.
+
+So here it is! Enjoy, and if you have any bugs, feel free to contact me!
+
+It's also worth mentioning that it utilizes a patched version of pygooglevoice (http://code.google.com/p/pygooglevoice/), as google changed the login stuffs, so I had to figure out how to get it working again :)
+
+Fitblip
