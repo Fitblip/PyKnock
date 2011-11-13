@@ -266,7 +266,7 @@ def listen():
             # Keep getting one of these stupid pings at work every 10 mins lol
             logging.debug('[T1] [%s] Ping (%d) from %s' % ("Switch",length,source))
         elif length == 20: 
-            logging.info('[T1] [%s] Ping (%d) from %s') % ("Mac",length,source))
+            logging.info('[T1] [%s] Ping (%d) from %s' % ("Mac",length,source))
         else:
             logging.info('[T1] [%s] Ping (%d) from %s' % ("Unknown",length,source))
 
