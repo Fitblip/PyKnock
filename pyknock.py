@@ -294,6 +294,11 @@ def smscheck():
                         for ip in ips:
                             logging.info('[T2] Calling lockfw for ' + ip)
                             lockfw(ip)
+                elif '#unlock' in msg['text']:
+                    logging.debug("[T2] Got an unlock text...")
+                    ip = msg['text'].split(' ')[-1]
+                    sendsms('Got unlock request for ' + ip)
+                    unlockfw(ip)
         for message in voice.sms().messages:
             logging.info('[T2] Deleting stale SMS\'s')
             message.delete()
