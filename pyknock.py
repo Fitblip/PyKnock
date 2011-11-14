@@ -297,8 +297,13 @@ def smscheck():
                 elif '#unlock' in msg['text']:
                     logging.debug("[T2] Got an unlock text...")
                     ip = msg['text'].split(' ')[-1]
-                    sendsms('Got unlock request for ' + ip)
-                    unlockfw(ip)
+                    # Simple sanity checking to make sure an IP was supplied
+                    try:
+                        socket.inet_aton(ip)
+                        sendsms('Got unlock request for ' + ip)
+                        unlockfw(ip)
+                    except socket.error:
+                        sendsms('Invalid IP! This is what I got => ' + ip)
         for message in voice.sms().messages:
             logging.info('[T2] Deleting stale SMS\'s')
             message.delete()
